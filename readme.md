@@ -9,9 +9,9 @@ We conduct our experiments using **PyTorch**, evaluating a wide range of network
 
 ## 🚀 Experiment Setup & Recommendations
 
-We initially implemented the framework using **NumPy** integrated with the `courselib` educational framework (a teaching support package provided by the instructor).  
-However, this version was found to be significantly slower (≈ 20 seconds per epoch on average).  
-To efficiently evaluate a wide variety of activation and initialization combinations, we transitioned to a **PyTorch GPU-accelerated version**, reducing the average epoch time to **about 3 seconds**.
+We initially implemented the framework using **NumPy** integrated with the `courselib` educational framework.  
+However, this version was found to be significantly slow (≈ 20 seconds per epoch on average).  
+To efficiently evaluate a wide variety of activation and initialization combinations, we transitioned to a **PyTorch GPU-accelerated version** (also can run without GPU on Mac), reducing the average epoch time to about 3 seconds.
 
 - ✅ The main experiment is implemented in [`run.ipynb`](./run.ipynb) using PyTorch with GPU acceleration.
 - 🧪 The original NumPy + `courselib` implementation is retained at the end of the notebook for verification and comparison.
@@ -55,7 +55,7 @@ CONFIG = {
         "he_normal":   {"factor": 2.0, "mode": "fan_in", "nonlinearity": "relu"},
         "he_uniform":  {"factor": 2.0, "mode": "fan_in", "nonlinearity": "relu"},
         "orthogonal":  {"gain": 1.0},
-        "trunc_normal": {"mean": 0.0, "std": 0.01, "a": -2.0, "b": 2.0}
+        "trunc_normal": {"mean": 0.0, "std": 0.1, "a": -2.0, "b": 2.0}
     },
     "hidden_size": 128,
     "input_size": 784,
@@ -101,24 +101,7 @@ The notebook is structured into the following sections:
 10. **He Initialization Parameter (Factor) Comparison**  
     Compares the effect of different `factor` values in He initialization on training performance, using fixed activation and architecture.
     
----
-
-### ⏱️ Runtime and Logging Details
-
-Each model records **epoch-level training duration** for timing analysis.  
-In addition, during the full experiment sweep, the main routine tracks the **overall runtime** and estimates the **expected remaining time (ETA)** after each model finishes training.  
-This allows real-time monitoring of experiment progress across all activation–initialization–depth combinations.
-
-For each model run, the following metrics are logged:
-
-- **train_loss** – Training loss per epoch  
-- **test_loss** – Validation loss per epoch  
-- **train_acc** – Training accuracy per epoch  
-- **test_acc** – Validation accuracy per epoch  
-- **epoch_time** – Time taken per epoch (in seconds)  
-- **act_mean_i** – Mean of activations at layer `i` (per epoch)  
-- **act_std_i** – Standard deviation of activations at layer `i`  
-- **grad_norm_i** – L2 norm of gradients at layer `i`  
+--- 
 
 ### ⏱️ Runtime and Logging Details
 
