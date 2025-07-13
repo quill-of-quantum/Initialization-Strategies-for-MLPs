@@ -124,3 +124,17 @@ All recorded metrics are exported as `.csv` files to the `results/` directory fo
 
 A NumPy-based implementation using the `courselib` educational framework is included at the end of the notebook.  
 It is intended for reference and correctness verification, but not used in main experiments due to slower performance.
+
+## 📎 Appendix: Extended Experiment on Sigmoid Activation
+
+During early testing, we found that using **sigmoid activation** with a **learning rate** of `0.01` over `50` epochs was insufficient for proper convergence.  
+As a result, we conducted a **dedicated set of experiments** focusing solely on sigmoid, adjusting parameters to allow deeper training and meaningful comparison.
+
+This extended experiment explores how different initialization strategies affect training performance **specifically under sigmoid activation**.
+
+To save storage space and reduce repository size:
+
+- ✅ We include the **source code and result plots** for this sigmoid-specific experiment.
+- 🚫 We do **not include the raw training logs or CSV data** for this part.
+
+You can find the results and source in the [`sigmoid/`](./sigmoid/) subdirectory.
