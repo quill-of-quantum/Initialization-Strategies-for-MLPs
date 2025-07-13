@@ -9,7 +9,7 @@ We conduct our experiments using **PyTorch**, evaluating a wide range of network
 
 ## 🚀 Experiment Setup & Recommendations
 
-We initially implemented the framework using **NumPy** integrated with the `courselib` educational framework.  
+We initially implemented the framework using **NumPy** integrated with the `courselib` educational framework (a teaching support package provided by the instructor).  
 However, this version was found to be significantly slower (≈ 20 seconds per epoch on average).  
 To efficiently evaluate a wide variety of activation and initialization combinations, we transitioned to a **PyTorch GPU-accelerated version**, reducing the average epoch time to **about 3 seconds**.
 
@@ -18,6 +18,22 @@ To efficiently evaluate a wide variety of activation and initialization combinat
 - 📄 Dependencies are listed in [`requirements.txt`](./requirements.txt).
 
 > ⚠️ **Running the full set of experiments (4 activations × 8 initializations × multiple layer configurations) takes approximately 8 hours.**
+
+---
+
+## 📁 Project Structure
+
+```bash
+.
+├── courselib/            # Educational utilities provided by the instructor
+├── data/                 # Auto-downloaded MNIST dataset
+├── he_factor_results/    # Results from Section 10: He Initialization Parameter (Factor) Comparison
+├── results/              # Main experiment outputs (from PyTorch implementation)
+├── results_numpy/        # Placeholder for NumPy experiment results (currently empty)
+├── sigmoid/              # Additional appendix experiments using Sigmoid
+├── run.ipynb             # Main experiment notebook (PyTorch + GPU)
+└── requirements.txt      # Python dependencies
+```
 
 ### ✅ Suggested Usage for Quick Testing
 
