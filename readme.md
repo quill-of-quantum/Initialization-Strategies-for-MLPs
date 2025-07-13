@@ -82,6 +82,9 @@ The notebook is structured into the following sections:
 9. **Accuracy Generalization Comparison Across Different Layer Depths**  
    Final training and test accuracy comparison across networks of varying depths and different initialization strategies.
 
+10. **He Initialization Parameter (Factor) Comparison**  
+    Compares the effect of different `factor` values in He initialization on training performance, using fixed activation and architecture.
+    
 ---
 
 ### ⏱️ Runtime and Logging Details
