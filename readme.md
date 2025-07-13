@@ -125,7 +125,7 @@ All recorded metrics are exported as `.csv` files to the `results/` directory fo
 ## 📎 Appendix: NumPy Implementation (Using `courselib`)
 
 A NumPy-based implementation using the `courselib` educational framework is included at the end of the notebook.  
-It is intended for reference and correctness verification, but not used in main experiments due to slower performance.
+It is intended for reference and correctness verification, but not used in main experiments due to slow performance.
 
 ## 📎 Appendix: Extended Experiment on Sigmoid Activation
 
