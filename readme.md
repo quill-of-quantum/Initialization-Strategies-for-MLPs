@@ -101,6 +101,23 @@ For each model run, the following metrics are logged:
 - **act_std_i** – Standard deviation of activations at layer `i`  
 - **grad_norm_i** – L2 norm of gradients at layer `i`  
 
+### ⏱️ Runtime and Logging Details
+
+Each model records **epoch-level training duration** for timing analysis.  
+In addition, during the full experiment sweep, the main routine tracks the **overall runtime** and estimates the **expected remaining time (ETA)** after each model finishes training.  
+This allows real-time monitoring of experiment progress across all activation–initialization–depth combinations.
+
+For each model run, the following metrics are logged:
+
+- **train_loss** – Training loss per epoch  
+- **test_loss** – Validation loss per epoch  
+- **train_acc** – Training accuracy per epoch  
+- **test_acc** – Validation accuracy per epoch  
+- **epoch_time** – Time taken per epoch (in seconds)  
+- **act_mean_i** – Mean of activations at layer `i` (per epoch)  
+- **act_std_i** – Standard deviation of activations at layer `i`  
+- **grad_norm_i** – L2 norm of gradients at layer `i`  
+
 All recorded metrics are exported as `.csv` files to the `results/` directory for downstream analysis and plotting.
 
 ## 📎 Appendix: NumPy Implementation (Using `courselib`)
